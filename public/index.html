@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Firefox CQ Issue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="init.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, rgba(52, 51, 52, 0.9) 10%, rgba(15, 14, 28, 0.9) 90%);
+      color: #b5b3a4;
+    }
+  </style>
+</head>
+<body>
+
+<script type="module">
+  // Patch global Foundry VTT functionality.
+  globalThis.Hooks = { on: () => null, once: () => null };
+  globalThis.Application = class Application {};
+  globalThis.foundry = { utils: { getRoute: () => '' } };
+  globalThis.game = { i18n: { localize: () => '', format: () => '' }};
+
+  await import('./init.js');
+</script>
+</body>
+</html>

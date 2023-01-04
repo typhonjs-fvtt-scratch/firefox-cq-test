@@ -1,0 +1,32 @@
+{
+  "name": "firefox-cq-test",
+  "description": "A test case for container query issue w/ Firefox.",
+  "license": "MPLv2",
+  "private": true,
+  "type": "module",
+  "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
+  "dependencies": {
+    "@typhonjs-fvtt/runtime": "^0.0.21",
+    "@typhonjs-fvtt/svelte-standard": "^0.0.17"
+  },
+  "overrides": {
+    "svelte": "npm:@typhonjs-svelte/svelte@3.55.0-cq"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15",
+    "autoprefixer": "^10",
+    "polka": "^0.5.0",
+    "postcss": "^8",
+    "postcss-preset-env": "^7",
+    "rollup-plugin-postcss": "^4",
+    "rollup-plugin-svelte": "^7",
+    "sass": "^1",
+    "sirv": "^2",
+    "svelte-preprocess": "^4"
+  },
+  "browserslist": [">5%", "not IE 11"],
+  "scripts": {
+    "build": "rollup --config",
+    "serve": "node ./test/server.js"
+  }
+}
